@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+{% extends 'homepage.html' %}
+{% load static %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <style>
+    * {
+  font-family: "Poppins", sans-serif;
+}
+body {
+
+    #051937,
+    #05162f,
+    #051327,
+    #040f1f,
+    #010a18
+  );
+
+  background-size: 800%;
+  animation: animateClr 1s infinite cubic-bezier(0.62, 0.28, 0.23, 0.99);
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  border: none;
+  border-bottom: 2px solid rgb(128, 126, 126);
+  background: transparent;
+  outline: none;
+  width: 100%;
+  text-transform: capitalize;
+  padding: 1rem 0.4rem;
+}
+.aside {
+  background-image: linear-gradient(
+    to left bottom,
+    #051937,
+    #002350,
+    #002d69,
+    #003684,
+    #01409f
+  );
+  animation: animateClr 5s infinite cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  background-size: 400%;
+}
+
+@keyframes animateClr {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+ion-icon:not([name="logo-codepen"]) {
+  border: 1px solid currentColor;
+  border-radius: 20%;
+  padding: 1rem;
+}
+.detail-card{
+margin-top:200px;
+
+}
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container detail-card">
+      <div class="row mb-5 align-items-center">
+              <div class="col-lg-6 text-center mx-auto">
+                <h2 class="font-weight-bold text-primary heading">
+                  Buy Property
+                </h2>
+              </div>
+      </div>
+  <div class="card mb-3">
+
+          <img src="{{ prop.property_img.url }}" class="card-img-top" alt="..." height="500px" width="500px">
+
+          <div class="card-body">
+           <center><h3 class="card-title">{{prop.property_place}}</h3></center>
+           <center> <p class="card-text">{{prop.property_price}}</p></center>
+           <center> <h3 class="card-title">{{prop.property_address}}</h3></center>
+          </div>
+        </div>
+</div>
+
+<!--first -card-->
+<!--<div class="container detail-card">-->
+<!--    <div class="col-xs-12 col-sm-12 col-md-12">-->
+<!--          <div class="card" style="width: 18rem;">-->
+<!--              <img src="{{ prop.property_img.url }} " class="card-img-top" alt="...">-->
+<!--              <div class="card-body">-->
+<!--                <h5 class="card-title">{{prop.property_place}}</h5>-->
+<!--                <h5 class="card-title">{{prop.property_price}}</h5>-->
+<!--               <h5 class="card-title">{{prop.property_address}}</h5>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+<!--second card-->
+
+<div class="container detail-card">
+  <div class="bg-light">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 p-5 bg-white rounded-3">
+        <div class="d-flex mb-3 flex-column">
+          <h1 class="h5 text-capitalize my-4">What service You need ?</h1>
+
+        </div>
+        <form class="row mb-3 form" method="post">{% csrf_token %}
+          <div class="col-md-6 p-3">
+            <input required placeholder="first name" type="text" name="name">
+          </div>
+          <div class="col-md-6 p-3">
+            <input required placeholder="Budget-Range" type="text" name="budget">
+          </div>
+          <div class="col-md-6 p-3">
+            <input required placeholder="E-mail" type="email" name="email">
+          </div>
+          <div class="col-md-6 p-3">
+            <input required placeholder="phone" type="text" name="phone">
+          </div>
+          <div class="col-md-6 p-3">
+              <input required placeholder="Additional Contact" type="text" name="contact">
+          </div>
+          <div class="text-end mt-4">
+            <button type="submit" class="btn px-4 py-3 btn-outline-light btn-primary">Send Details</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4 col-md-12 text-white aside px-4 py-5">
+        <div class="mb-5">
+          <h1 class="h3">Contact Information</h1>
+          <p class="opacity-50">
+            <small>
+              Fill out the from and we will get back to you whitin 24 hours
+            </small>
+          </p>
+        </div>
+        <div class="d-flex flex-column px-0">
+          <ul class="m-0 p-0">
+            <li class="d-flex justify-content-start align-items-center mb-4">
+              <span class="opacity-50 d-flex align-items-center me-3 fs-2">
+                <ion-icon name="call"></ion-icon>
+              </span>
+              <span>+134 1234 1234</span>
+            </li>
+            <li class="d-flex align-items-center r mb-4">
+              <span class="opacity-50 d-flex align-items-center me-3 fs-2">
+                <ion-icon name="mail"></ion-icon>
+              </span>
+              <span>Help@contact.com</span>
+            </li>
+            <li class="d-flex justify-content-start align-items-center mb-4">
+              <span class="opacity-50 d-flex align-items-center me-3 fs-2">
+                <ion-icon name="pin"></ion-icon>
+              </span>
+              <span>52 Buddy Ln Conway, <br />
+                Arkansas(AR), 72032
+              </span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('.form').on('submit', function(){
+            swal("Title", "Message Content", "success", {
+  button: "Ok",
+});
+        });
+    });
+</script>
+</body>
+</html>
+{% endblock %}

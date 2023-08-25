@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+  <head>
+
+<style>
+    #registeradmin{
+    margin-top:100px;
+    }
+    #button{
+    margin-left:450px;
+    }
+</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+  </head>
+  <body>
+
+ <form method="post" action="http://127.0.0.1:8000/pro_adminapp/adminupdate/{{data.id}}">{% csrf_token %}
+<div class="container" >
+    <div class="card-body">
+            <div class="form-group" id="registeradmin">
+                <center><h1 style="color:white;">Edit Admin</h1></center>
+                <label  class="text-white">User Name</label>
+            <input name="username" type="text" class="form-control" value="{{data.username}}"  placeholder="User Name">
+            </div>
+            <div class="form-group">
+            <label  class="text-white">First Name</label>
+            <input type="text" name="firstname" class="form-control" value="{{data.firstname}}"  placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label  class="text-white">Last Name</label>
+            <input type="text" class="form-control" name="lastname" value="{{data.lastname}}" placeholder="Last Name">
+            </div>
+         <div class="form-group">
+                <label  class="text-white">Email address</label>
+            <input type="email" class="form-control"  name="email" value="{{data.email}}" placeholder="Email address">
+            </div>
+           <div class="form-group">
+                <label class="text-white">Password</label>
+            <input type="text" class="form-control" name="password" value="{{data.password}}"  placeholder="Password">
+            </div>
+           <div class="form-group">
+                <label class="text-white">confirm Password</label>
+            <input type="text" class="form-control" name="confirmpassword" value="{{data.confirmpassword}}"  placeholder="Password">
+            </div>
+           <div class="form-group">
+                <label class="text-white">Phonenumber</label>
+            <input type="number" class="form-control" name="phonenumber" value="{{data.phonenumber}}"  placeholder="Phonenumber">
+            </div>
+    </div>
+
+            <div class="card-footer">
+            <button type="submit" class="btn btn-primary" id="button">Submit</button>
+            </div>
+    </div>
+
+
+</form>
+
+  </body>
+</html>
+{% endblock %}

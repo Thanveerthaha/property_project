@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% extends 'homepage.html' %}
+{% load static %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <style>
+        .category{
+        margin-top:150px;
+        }
+       .category-feature{
+       margin-top:100px;
+       }
+.card{
+  margin: 5% 0%;
+}
+
+.card-body{
+  margin: 0% 0% 0% 3%;
+  padding: 6% 0%;
+}
+
+
+</style>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <div
+      class="hero page-inner overlay"
+      style="background-image: url('{% static 'images/hero_bg_3.jpg' %}')"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-9 text-center mt-5">
+            <h1 class="heading" data-aos="fade-up">Categories</h1>
+
+            <nav
+              aria-label="breadcrumb"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <ol class="breadcrumb text-center justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li
+                  class="breadcrumb-item active text-white-50"
+                  aria-current="page"
+                >
+                  Category
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<div class="container category">
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="font-weight-bold text-primary heading">
+               Properties
+            </h2>
+          </div>
+          <div class="col-lg-6 text-lg-end">
+            <p>
+              <a
+                href="#"
+                target="_blank"
+                class="btn btn-primary text-white py-3 px-4"
+                >View all properties</a
+              >
+            </p>
+          </div>
+        </div>
+
+          <!-- Card deck -->
+          <div class="card-deck row">
+
+          {% for i,j,k in mylist %}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!-- Card -->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay">
+                <img class="card-img-top" src="/media/category_image/{{i}}" alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!--Card content-->
+              <div class="card-body">
+
+                <!--Title-->
+                <h4 class="card-title">{{j}}</h4>
+                <!--Text-->
+                <p class="card-text">{{k}}</p>
+<!--                <button type="button" class="btn btn-primary btn-md">Read more</button>-->
+
+                   <a href="{% url 'property_detail' category=j %}" class="btn btn-primary btn-md">{{ j }}</a>
+              </div>
+
+            </div>
+            <!-- Card -->
+            </div>
+
+          {% endfor %}
+
+
+
+
+
+
+
+          </div>
+
+
+</div>
+
+
+
+
+
+   <section class="features-1 category-feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="box-feature">
+              <span class="flaticon-house"></span>
+              <h3 class="mb-3">Our Properties</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptates, accusamus.
+              </p>
+              <p><a href="#" class="learn-more">Learn More</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="box-feature">
+              <span class="flaticon-building"></span>
+              <h3 class="mb-3">Property for Sale</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptates, accusamus.
+              </p>
+              <p><a href="#" class="learn-more">Learn More</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="box-feature">
+              <span class="flaticon-house-3"></span>
+              <h3 class="mb-3">Real Estate Agent</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptates, accusamus.
+              </p>
+              <p><a href="#" class="learn-more">Learn More</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="box-feature">
+              <span class="flaticon-house-1"></span>
+              <h3 class="mb-3">House for Sale</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptates, accusamus.
+              </p>
+              <p><a href="#" class="learn-more">Learn More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+</body>
+</html>
+{% endblock %}

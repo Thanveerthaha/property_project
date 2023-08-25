@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% extends 'homepage.html' %}
+{% load static %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <style>
+    #sellproperty{
+    margin-top:50px;
+    }
+
+   .sell-container{
+   padding-bottom:180px;
+   margin-top:120px;
+   background-color: #F3FDE8;
+
+   }
+   .card-space{
+   padding-top:20px;
+   }
+</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <div
+      class="hero page-inner overlay"
+      style="background-image: url('{% static 'images/hero_bg_3.jpg' %}')"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-9 text-center mt-5">
+            <h1 class="heading" data-aos="fade-up">Sell Property</h1>
+
+            <nav
+              aria-label="breadcrumb"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <ol class="breadcrumb text-center justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li
+                  class="breadcrumb-item active text-white-50"
+                  aria-current="page"
+                >
+                  Seller Property
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+ <form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+<div class="container sell-container" >
+    <div class="card-body">
+            <div class="form-group" id="sellproperty">
+                <center><h1 style="color:black;">Sell Property</h1></center>
+
+               <h6> <label  class="text-black">Full Name</label></h6>
+            <input name="fullname" type="text" class="form-control"  placeholder="Full Name" required>
+            </div>
+            <div class="form-group card-space">
+           <h6><label  class="text-black">Phone Number</label></h6>
+            <input type="number" name="number" class="form-control"  placeholder="Phone Number" required>
+            </div>
+
+           <div class="form-group card-space">
+            <h6><label  class="text-black">Property Type</label></h6>
+            <input type="text" name="propertytype" class="form-control"  placeholder="Property Type" required>
+            </div>
+
+          <div class="form-group card-space">
+           <h6> <label  class="text-black">Property Location</label></h6>
+            <input type="text" name="propertylocation" class="form-control"  placeholder="Property Location" required>
+            </div>
+
+
+          <div class="form-group card-space">
+           <h6> <label  class="text-black">Year Built</label></h6>
+            <input type="text" name="yearbuilt" class="form-control"  placeholder="Year Built" required>
+            </div>
+
+            <div class="form-group card-space">
+           <h6><label  class="text-black">Is the Property Furnished or Unfurnished?</label></h6>
+            <input type="text" name="furnish" class="form-control"  placeholder="furnished or unfurnished" required>
+            </div>
+
+           <div class="form-group card-space">
+               <div class="mb-3">
+                 <h6> <label class="form-label text-white">property image</label></h6>
+                  <input class="form-control" name="property_image" type="file" required>
+              </div>
+           </div>
+
+            <div class="form-group">
+
+            </div>
+
+
+    </div>
+            <div class="card-footer">
+            <button type="submit" class="btn btn-primary" id="button">Submit</button>
+            </div>
+    </div>
+
+
+</form>
+
+</body>
+</html>
+{% endblock %}

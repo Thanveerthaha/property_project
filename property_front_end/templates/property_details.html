@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% extends 'homepage.html' %}
+{% load static %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <style>
+        .property{
+        margin-top:150px;
+        }
+        .property-img{
+        height:300px;
+        }
+        .all-card{
+        margin-top:35px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div
+      class="hero page-inner overlay"
+      style="background-image: url('{% static 'images/hero_bg_3.jpg' %}')"
+    >
+
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-9 text-center mt-5">
+            <h1 class="heading" data-aos="fade-up">Details</h1>
+
+            <nav
+              aria-label="breadcrumb"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <ol class="breadcrumb text-center justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li
+                  class="breadcrumb-item active text-white-50"
+                  aria-current="page"
+                >
+                  Category
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<div class="container property">
+
+
+          <!-- Card deck -->
+          <div class="card-deck row">
+
+            {% for i,j,k,l,m in mylist  %}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!-- Card -->
+            <div class="card all-card">
+
+              <!--Card image-->
+              <div class="view overlay">
+                <img class="card-img-top property-img" src="/media/product_image/{{i}}" alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!--Card content-->
+              <div class="card-body">
+
+                <!--Title-->
+                <h4 class="card-title"><span style=" font-family:Times New Roman">Place:</span>&nbsp; &nbsp;{{ j }}</h4>
+                <!--Text-->
+                <h5 class="card-text"><span style=" font-family:Times New Roman">Price:</span>&nbsp; &nbsp;{{ k }}Rs</h5>
+                  <h4 class="card-title"><span style=" font-family:Times New Roman">Address:</span>&nbsp; &nbsp;{{ l }}</h4>
+
+<!--                <button type="button" class="btn btn-primary btn-md">Read more</button>-->
+                    <a href="http://127.0.0.1:8000/pro_frontend/card_details/{{m}}" type="submit" class="btn btn-primary btn-md">Buy Property</a>
+
+              </div>
+
+            </div>
+            <!-- Card -->
+            </div>
+
+          {% endfor %}
+
+
+
+
+
+
+
+          </div>
+
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}
