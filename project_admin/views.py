@@ -10,8 +10,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
 # Create your views here.
 
-def index(request):
-    return render(request,'index.html')
+def main(request):
+    return render(request,'main.html')
 
 
 
